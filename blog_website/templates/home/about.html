@@ -1,5 +1,58 @@
 {% extends 'base.html' %}
 
-{% block title %} Home {% endblock title %}
+{% block title %} About {% endblock title %}
+{% block aboutactive %} active {% endblock aboutactive %}
 
-{% block body %}about{% endblock body %}
+
+{% block body %}
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">About Us</h1>
+        <p class="col-md-8 fs-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam tempore officiis
+            consectetur reiciendis, nisi repellendus facere ea nulla rerum, voluptates est aliquam! Repudiandae, quod
+            illo veniam quae vero rem expedita fugit molestiae eos sit doloribus placeat ipsum aperiam aliquid soluta.
+        </p>
+        <a class="btn btn-primary btn-lg" role="button" href="/blog/" type="button">Go to blog posts</a>
+    </div>
+</div>
+
+<div class="container marketing">
+    <div class="row">
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle mx-auto" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false" style="display: block;">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777"
+                    dy=".3em">140x140</text>
+            </svg>
+            <h2 class="fw-normal" style="text-align:center;">Heading</h2>
+            <p style="text-align:center;">Some representative placeholder content for the three columns of text below the carousel. This is the
+                first column.</p>
+            <p style="text-align: center;"><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle mx-auto" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false" style="display: block;">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777"
+                    dy=".3em">140x140</text>
+            </svg>
+            <h2 class="fw-normal" style="text-align:center;">Heading</h2>
+            <p style="text-align:center;">Another exciting bit of representative placeholder content. This time, we've moved on to the second
+                column.</p>
+            <p style="text-align: center;"><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle mx-auto" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false" style="display: block;">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777"
+                    dy=".3em">140x140</text>
+            </svg>
+            <h2 class="fw-normal" style="text-align:center;">Heading</h2>
+            <p style="text-align:center;">And lastly this, the third column of representative placeholder content.</p>
+            <p style="text-align: center;"><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div>
+</div>
+{% endblock body %}

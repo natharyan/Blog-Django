@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %} Home {% endblock title %}
+{% block title %} Search Results {% endblock title %}
 {% block blogactive %} active {% endblock blogactive %}
 
 {% block body %}
 <div class="container my-4">
-    <h2>The blogposts:</h2>
+    <h2>Search results for '{{query}}':</h2>
     {% for post in allPosts %}
     <div class="row g-0 border rounded overflow-hidden flex-md-row my-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">

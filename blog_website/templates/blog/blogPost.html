@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %} BlogPost {% endblock title %}
+{% block blogactive %} active {% endblock blogactive %}
 
-{% block body %}{% endblock body %}
+{% block body %}
+<div class="container my-4">
+    <article class="blog-post">
+        <h2 class="blog-post-title mb-1">{{post.title}}</h2>
+        <p class="blog-post-meta">{{post.timestamp.date}} by <a href="#">{{post.author}}</a></p>
+        <p>{{post.content}}</p>
+    </article>
+</div>
+{% endblock body %}

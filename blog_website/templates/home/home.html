@@ -1,5 +1,34 @@
 {% extends 'base.html' %}
 
 {% block title %} Home {% endblock title %}
+{% block homeactive %} active {% endblock homeactive %}
+{% block body %}
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Welcome to my blog!</h1>
+    <p class="col-md-8 fs-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio tenetur iure minus similique voluptate ea
+      itaque esse placeat, velit recusandae natus laboriosam alias, quos expedita aliquid beatae fuga ratione illo
+      voluptas quis! Vel doloremque eum libero, rerum perspiciatis tempore atque.</p>
+      <a class="btn btn-primary btn-lg" role="button" href="/blog/" type="button">Go to blog posts</a>
+  </div>
+</div>
 
-{% block body %}{% endblock body %}
+<div class="container">
+    <h2>Popular blogposts:</h2>
+    {% for post in allPosts %}
+    <div class="row g-0 border rounded overflow-hidden flex-md-row my-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{post.author}}</strong>
+          <h3 class="mb-0">{{post.title}}</h3>
+          <div class="mb-1 text-muted">{{post.timestamp.date}}</div>
+          <p class="card-text mb-auto">{{post.content| truncatechars:500}}</p>
+          <div>
+            <a href="/blog/{{ post.slug }}" role="button" class="btn btn-primary my-3">Continue reading</a>
+          </div>
+        </div>
+        <div class="col-auto d-none d-lg-block"> </div>
+      </div>
+      {% endfor %}
+</div>
+
+{% endblock body %}
