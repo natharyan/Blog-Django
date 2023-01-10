@@ -10,5 +10,33 @@
         <p class="blog-post-meta">{{post.timestamp.date}} by <a href="#">{{post.author}}</a></p>
         <p>{{post.content}}</p>
     </article>
+    <hr>
+</div>
+
+<div class="container">
+    <h2>Comments</h2>
+    <form action="/blog/postComment" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="comment" class="form-label">Add a new comment</label>
+          <input type="text" class="form-control" name="comment" id="comment" placeholder="Enter comment here">
+        </div>
+        <div class="mb-3">
+          <input type="hidden" class="form-control" name="postSno" id="postSno" value="{{post.sno}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    {% for comment in comments %}
+        <div class="row my-3">
+            <div class="col-md-1">
+                <img class="rounded mx-auto d-block w-100 p-2" src="/static/img/user.png" alt="user image">
+            </div>
+            <div class="col-md-11">
+                <div class="mt-2"><strong>{{comment.user.username}}</strong> at {{comment.timestamp}}</div>
+                <div>{{comment.comment}}</div>
+            </div>
+        </div>
+    {% endfor %}
 </div>
 {% endblock body %}
