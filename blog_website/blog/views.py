@@ -34,7 +34,7 @@ def postComment(request):
         postSno = request.POST.get("postSno")
         post = Post.objects.get(sno=postSno)
         parentSno = request.POST.get("parentSno")
-        if parentSno == "":
+        if parentSno is None:
             comment = BlogComment(comment = comment, user = user, post = post)
             comment.save()
             messages.success(request, 'Comment successfully posted')

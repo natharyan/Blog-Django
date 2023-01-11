@@ -10,7 +10,7 @@
     <article class="blog-post">
         <h2 class="blog-post-title mb-1">{{post.title}}</h2>
         <p class="blog-post-meta">{{post.timestamp.date}} by <a href="#">{{post.author}}</a></p>
-        <p>{{post.content}}</p>
+        <p>{{post.content|safe}}</p>
     </article>
     <hr>
 </div>
@@ -69,10 +69,10 @@
                         <!-- Replies displayed here -->
                         {% for reply in replyDict|get_val:comment.sno %}
                             <div class="row my-3">
-                                <div class="col-1 col-sm-1">
+                                <div class="col-3 col-sm-3 col-md-1">
                                     <img class="rounded mx-auto d-block w-75" src="/static/img/robin.png" alt="user image">
                                 </div>
-                                <div class="col-11 col-sm-11" style="font-size:smaller">
+                                <div class="col-9 col-sm-9 col-md-11" style="font-size:smaller">
                                     <div><strong>{{reply.user.username}}</strong> <span style="font-size: smaller">{{reply.timestamp|naturaltime}}</span></div>
                                     <div>{{reply.comment}}</div>
                                 </div>
