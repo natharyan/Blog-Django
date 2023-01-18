@@ -19,7 +19,6 @@ def blogPost(request, slug):
     replies = BlogComment.objects.filter(post = post).exclude(parent = None)
     replyDict = {}
 
-    # TODO: restrict replies to user logged using user.is_authenticated in blogPost
     for reply in replies:
         if reply.parent.sno not in replyDict.keys():
             # not in

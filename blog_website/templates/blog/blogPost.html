@@ -2,6 +2,7 @@
 
 {% block title %} BlogPost | {{post.title}} {% endblock title %}
 {% block blogactive %} active {% endblock blogactive %}
+{% block favicon %}<link rel="icon" href="/static/favicon/blog.svg" type="image/svg+xml" sizes="16x16">{% endblock favicon %}
 
 {% block body %}
 {% load humanize %}
@@ -9,7 +10,7 @@
 <div class="container my-4">
     <article class="blog-post">
         <h2 class="blog-post-title mb-1">{{post.title}}</h2>
-        <p class="blog-post-meta">{{post.timestamp.date}} by <a href="#">{{post.author}}</a> (<span>{{post.views}} views</span>)</p>
+        <p class="blog-post-meta">{{post.timestamp.date}} by <a href="#">{{post.author}}</a></p>
         <p>{{post.content|safe}}</p>
     </article>
     <hr>
